@@ -15,12 +15,13 @@ slices = [b[i:i + 32] for i in range(0, 256, 32)]
 xor_result = 0
 for binary_slice in slices:
     xor_result ^= int(binary_slice, 2)
+    
+d = xor_result
 
 #Рассчитать w = d ⊕ 0x7613a0ca
-d = xor_result
 w = d ^ 0x7613a0ca
 
 print("hash (256-bit):", b)
-print("32-bit Slices:", slices)
+print("32-bit slices:", slices)
 print("d:", bin(d)[2:].zfill(32))
 print("w:", bin(w)[2:].zfill(32))
